@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="Description" content="">
+		<title>Affordable Scapes - Landscaping, Derrimut, Tarneit, Point Cook, Werribee, Melbourne, Victoria</title>
+		<link href="css/screen.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+		
+		<script type="text/javascript">
+    var _bugHerdAPIKey = '33b2b0e6-41f5-4b79-9942-751167651b3e';
+    (function (d, t) {
+        var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        bh.type = 'text/javascript';
+        bh.src = "//www.bugherd.com/bugherd.js?s=" + (new Date()).getTime();
+        s.parentNode.insertBefore(bh, s);
+    })(document, 'script');
+</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div id="head">
+				<h1 class="logo"><a href="index.html">Affordable Scapes</a></h1>
+				<ul id="site_nav">
+					<li><a href="index.html">home</a></li>
+						<li><a href="services.html">who we are</a></li>
+					<li><a href="gallery.html">gallery</a></li>
+					<li class="active"><a href="contact.html">contact us</a></li>
+				</ul>
+			</div>
+			<div id="content" class="mainCol">
+				<div id="contact" class="section">
+					<h2>Contact us</h2>
+<p>Feel free to call us on <strong>0402 330 261</strong> or fill in the form below and we'll get in touch with you ASAP!<br/><br/></p>
+					<form action="mail.php" method="post">
+					
+						<label class="labelTop">Name</label>
+						<input name="name" id="name" size="40" />
+						<label class="labelTop">Email</label>
+						<input name="email" id="email" size="40" />
+
+						<label class="labelTop">Phone number</label>
+						<input name="phone" id="phone" size="40" />
+						<label class="labelTop">Address</label>
+						<input name="address" id="address" size="40" />
+						<label class="labelTop">Budget</label>
+						<select name="budget" id="budget">
+							<option value="<1k">Under $1,000</option>
+							<option value="1-3k">$1,000-$3,000</option>
+							<option value="3-5k">$3,000-$5,000</option>
+							<option value="5-7k">$5,000-$7,000</option>
+							<option value=">7k">$7,000+</option>
+						</select>
+						<label class="labelTop">Work required</label>
+						<input name="work_landconstruct" id="work_landconstruct" value="yes" type="checkbox" /><label>Landscape construction</label>
+						<input name="work_instantturf" id="work_instantturf" value="yes" type="checkbox" /><label>Instant turf</label>
+						<input name="work_synthturf" id="work_synthturf" value="yes" type="checkbox" /><label>Synthetic turf</label>
+						<br />
+						<input name="work_gardenbeds" id="work_gardenbeds" value="yes" type="checkbox" /><label>Garden beds</label>
+						<input name="work_paving" id="work_paving" value="yes" type="checkbox" /><label>Paving</label>
+						<input name="work_retaining" id="work_retaining" value="yes" type="checkbox" /><label>Retaining Walls</label>
+						<br />
+						<input name="work_decking" id="work_decking" value="yes" type="checkbox" /><label>Timber decking</label>
+						<input name="work_landdesign" id="work_landdesign" value="yes" type="checkbox" /><label>Landscape design</label>
+						<input name="work_irrigation" id="work_irrigation" value="yes" type="checkbox" /><label>Irrigation</label>
+						<br />
+						<input name="work_pergolas" id="work_pergolas" value="yes" type="checkbox" /><label>Pergolas</label>
+						<input name="work_makeover" id="work_makeover" value="yes" type="checkbox" /><label>Garden makeovers</label>
+						<input name="work_digger" id="work_digger" value="yes" type="checkbox" /><label>Mini digger hire</label>
+						<br />
+						<input name="work_tipper" id="work_tipper" value="yes" type="checkbox" /><label>Tipper hire</label>
+						<br />
+						<label class="labelTop">Other info</label>
+						<textarea name="other" id="other"></textarea>
+						<input type="submit" value="Submit" />
+						
+					</form>
+
+				</div>
+			</div>
+			<div class="subCol">
+				<div class="section">
+					<h3>Gallery of our work</h3>
+					<p>Check out some photos of our past work.</p>
+					<a href="gallery.html"><img src="images/button_gallery.png" alt="view the gallery" /></a>
+				</div>
+				<div class="section">
+					<h3>Mini digger &amp; tipper hire</h3>
+					<p>We also provide mini digger hire, complete with 4 in 1 bucket, post hole 
+					digger (200mm, 300mm, 450mm &amp; 600mm augers) and 150mm heavy duty chain 
+					trencher. You can also hire a 4m<sup>3</sup> tip truck.</p>
+					<p>You can request a quote using our contact form.</p>
+				</div>
+			</div>
+			<div id="footer" class="section">
+				&copy; Copyright 2010 Affordable Scapes<br />
+				Landscaping - Derrimut, Tarneit, Werribee,<br /> Point Cook, Melbourne, Victoria
+			</div>
+		</div>
+		
+		
+		<script>
+			//<![CDATA[
+			$('input[type="submit"]').click(function() {
+
+				var thisNode = $(this);
+
+				thisNode.attr("disabled", "disabled");
+				$.ajax({
+					type: "POST",
+					url: "mail.php",
+					data: $('form').serialize(),
+					success: function() {
+						pageTracker._trackPageview("/contact/success"); 
+						alert('Your message has been sent');
+						thisNode.removeAttr("disabled");
+					},
+					error: function() {
+						alert('Your message can not be sent at the moment, please try again later.');
+						thisNode.removeAttr("disabled");
+					},
+					dataType: "json"
+				});
+				return false;
+			});
+			//]]>
+		</script>
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-12898189-1");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
+		
+	</body>
+</html>
